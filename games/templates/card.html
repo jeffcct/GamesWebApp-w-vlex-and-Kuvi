@@ -1,0 +1,58 @@
+
+<link rel="stylesheet" href="../static/css/card.css">
+<div class="card">
+    <div class="card-image">
+        <img class="game-photo" src="{{ game.image_url }}" \>
+        <div class="overlay">
+            <img class="achievements ovelay" src="../static/images/trophy.png" \>
+            <img class="likes" src="../static/images/heart.png" />
+            <p class="num_achievements">{{ game.achievements }}</p>
+            <p class="num_likes">{{ game.recommendations }}</p>
+        </div>
+    </div>
+    <div class="card-top">
+        <h4 class="game-title">{{ game.title }}</h4>
+        <p class="price">${{ game.price }}</p>
+        <p class="release_date">{{ game.release_date }}</p>
+        <p> {{game_id }}</p>
+        {% if game.description != None %}
+            <p class="description">{{ game.description|truncate(90) }}</p>
+        {%endif%}
+    </div>
+    <div class="card-top">
+        {% for genre in game.genres %}
+        <a href="{{ url_for('browse_bp.browse_games_by_genre', genre_name=genre.genre_name) }}">
+            <button type="button" class="genre-button" href="google.com" > {{ genre.genre_name }}</button>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="card-middle">
+        {% if game.windows %}
+            <img class="os-icon" src="../static/images/windows.png" />
+        {%endif %} 
+        {% if game.apple %}
+            <img class="os-icon" src="../static/images/apple.png" />
+        {% endif %}
+        {% if game.linux %}
+            <img class="os-icon" src="../static/images/linux.png" />
+        {% endif%}
+    </div>
+    <div class="card-average">
+        <div class="rating">
+            {% for i in range(game.rounded_rating) %}
+            <img class="rating-img" src="../static/images/star-filled.png">
+            {% endfor %}
+            {% for i in range(5 - game.rounded_rating) %}
+            <img class="rating-img" src="../static/images/star-unfilled.svg">
+            {%endfor%}
+        </div>
+        <div class="centered">
+            <h5>rating = {{ game.average_rating }}</h5>
+        </div>
+    </div>
+    <div class="card-bottom">
+        <h4 class="publisher">{{ game.publisher.publisher_name }}<h4>
+    </div>
+    
+</div>
+

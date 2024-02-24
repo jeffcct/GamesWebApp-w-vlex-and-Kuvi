@@ -1,0 +1,24 @@
+.pagination {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.previous-button, .next-button{
+    background: #fb2576;
+    height: 50px;
+    width: 95px;
+    border-color: #fb2576;
+    border-radius: 8px;
+}
+
+.button-text{
+    font-size: 16px;
+    font-family: "Ubuntu", sans-serif;
+    color: white;
+}

@@ -1,0 +1,191 @@
+.game-photo, .card {
+    width: 290px;
+    border-radius: 35px 7.5px 0 0;
+    position: relative;
+    margin: 0;
+}
+.card p, h4 {
+    margin: inherit;
+}
+
+.card-top {
+    background-color: #fb257680;
+    /*#afaba8 prev color*/
+}
+.card-middle {
+    background-color: #303030;
+}
+.card-bottom {
+    background-color: black;
+    border-radius: 0 0 150px 15px;
+}
+
+.card-top, .card-middle, .card-bottom {
+    text-align: center;
+    margin: 1px;
+    padding: 0;
+    border: 0;
+    
+}
+
+.achievements, .likes { 
+    position: absolute;
+    top: 10px;
+}
+
+.achievements {
+    left: 25px;
+    top: 15px;
+}
+
+.likes {
+    right: 5px; 
+    top: 15px;
+}
+.num_likes, .num_achievements { 
+    position: absolute;
+    top: 10px;
+    color: black;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 1px black;
+    font-size: 15pt;
+}
+
+.num_achievements {
+    left: 45px;
+}
+
+.num_likes {
+    right: 20px; 
+}
+
+
+.achievements, .likes {
+    width: 15px;
+}
+
+.os-icon {
+    width: 30px;
+    height: 34px;
+}
+
+.card-middle p, .card-top p {
+    font-size: 7pt;
+}
+
+.card-middle h4, .card-top h4 {
+    font-size: 9pt;
+}
+
+.overlay {
+    opacity: 0;
+}
+
+.card, .card * {
+    z-index: 1;
+}
+
+.card:hover {
+    .card, .card * {
+        z-index: 100;
+    }
+
+    .overlay {
+        opacity: 1;
+    }
+
+    
+    .game-photo, .card , .card-bottom, .card-top, .card-middle, .rating, .card-average {
+        width: 340px;
+        -webkit-transition: width 0.1s ease-in-out;
+        -moz-transition: width 0.1s ease-in-out;
+        -o-transition: width 0.1s ease-in-out;
+        transition: width 0.1s ease-in-out;
+    }
+
+    .game-photo, .card {
+        border-radius: 20px 50px 0 0;
+    }
+
+    .card-bottom {
+        background-color: black;
+        border-radius: 0 0 55px 400px;
+    }
+
+
+}
+
+#main
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: auto;
+    width: 100%;
+    margin: 30px 5px 30px 5px;
+    background: #1b1b1b;   /*test val*/
+    font-family: "Ubuntu", sans-serif;
+    color: #E8C2CA;
+    gap: 20px 0px;
+/*
+    background: #1b1b1b;
+*/
+}
+
+.publisher {
+    color: white;
+}
+
+.genre-button {
+    background-color: #808080;
+    border: solid 1px;
+    padding: 5px;
+    border-radius: 50px;
+    border-color: #E8C2CA;
+}
+
+.genre-button:hover {
+    background-color: #D1B3C4;
+}
+
+a {
+    color: unset;
+}
+
+.card-average {
+    background: #101010;   
+}
+
+.rating {
+    background: #101010;
+    display: none;
+}
+
+.rating {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin: 1px;
+    border: 0;
+    width: 300px;
+}
+
+.rating-img {
+    width: 45px;
+    color: white;
+}
+
+.card:hover {
+    .rating {
+        display: block;
+    }
+}
+
+.centered {
+    text-align: center;
+}
+
+.card {
+    margin-right: 20px;
+}

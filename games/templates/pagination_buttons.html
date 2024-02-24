@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="../static/css/pagination.css">
+<div class="pagination">
+    <form class="button-container" method="get">
+            <button class="previous-button" type="submit" name="page" value="{{ page - 1 }}">
+                <span class="button-text">Previous</span>
+            </button>
+            <button class="next-button" type="submit" name="page" value="{{ page + 1 }}">
+                <span class="button-text">Next</span>
+            </button>
+    </form>
+</div>

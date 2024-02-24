@@ -1,0 +1,14 @@
+
+
+<div id="sidebar-wrapper">
+    <h2>Browse by Genre</h2>
+    
+    <ul id="sidebar-menu">
+        <!--Browse by genre-->
+        {% for genre in genres %}
+            <li class="menu-item">
+                <a class="menu-text" href="{{url_for('browse_bp.browse_games_by_genre', genre_name=genre.genre_name)}}">{{ genre.genre_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,116 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.row-game-display-wrapper, .header-img-container, .game-details-container,
+.game-details-left, .game-details-right, .game-details-metadata,
+.row-button-container, .game-genre-buttons
+{
+    display: flex;
+}
+
+.row-game-display-wrapper{
+    background: gray;
+    flex-direction: row;
+    margin: 0px 50px 0px 50px;
+    border-radius: 8px;
+
+}
+
+.header-img-container{
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    align: center;
+}
+
+.game-header-img{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    border-radius: 8px;
+}
+
+.game-details-container{
+    width: 60%;
+    flex-direction: row;
+}
+
+.game-details-left{
+    flex-direction: column;
+    justify-content: center;
+    width: 65%;
+    margin: 10px 0px 10px 20px;
+}
+
+.game-details-table{
+    width: 70%;
+    font-size: 14px;
+}
+
+.game-details-metadata{
+    flex-direction: row;
+    font-size: 14px;
+    gap: 50px 0px;
+    margin: 10px 0px 10px 0px;
+}
+
+.metadata-descriptors{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.metadata-entries{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.game-details-right{
+    width: 35%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.game-os-compatibility{
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    width: 100%;
+    margin-bottom: 10px;
+    gap: 8px;
+}
+.game-os-compatibility img{
+    height: 28px;
+}
+
+.game-genre-buttons{
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.row-button-container{
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px 0px 0px;
+}
+
+.row-display-button{
+    background: #fb2576;
+    border: solid 1px #fb2576;
+    border-radius: 5px;
+}
+
+.row-display-button:hover{
+    background-color: rgba(251, 37, 118, 0.7);
+}
+
+.row-display-button:active{
+    background-color: rgba(251, 37, 118, 0.45);
+}

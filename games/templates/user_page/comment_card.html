@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="../static/css/comment_card.css">
+<div class="card">
+    <div class="card-image">
+        <img class="game-img" src="{{ review.game.image_url }}" \>
+    </div>
+    <div class="rating">
+        {% for i in range(review.rating) %}
+        <img class="rating-img" src="../static/images/star-filled.png">
+        {% endfor %}
+        {% for i in range(5 - review.rating) %}
+        <img class="rating-img" src="../static/images/star-unfilled.svg">
+        {%endfor%}
+    </div>
+    <div class="card-body">
+        {% for line in review.comment.splitlines() %}
+            <p> {{ line }} </p>
+        {% endfor %}
+    </div>
+    <div class="card-bottom">
+        <p>{{ review.game.title }}</p>
+    </div>
+</div>

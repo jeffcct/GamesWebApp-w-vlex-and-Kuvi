@@ -1,0 +1,18 @@
+{%extends 'layout.html'%}
+
+{% block title %}Favourites{% endblock %}
+
+
+{%block content%}
+    <main id="main">
+        {% for game in games %}
+        <a href = "{{ url_for('game_bp.game_description', gameid = game.game_id) }}">
+            {% with game = game %}
+                {% include 'card.html' %}
+            {% endwith %}
+        </a>
+        {% endfor %}
+
+    </main>
+
+{%endblock%}

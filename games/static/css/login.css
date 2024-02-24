@@ -1,0 +1,49 @@
+input[type='text'], select, input[type='password']{
+    display: block;
+    background-color: #1b1b1b;
+    width: 500px;
+    color: white;
+    border-radius: 25px;
+    border: solid 1px #fb2576;
+    padding: 9px;
+    font-size: 16px;
+}
+input:-webkit-autofill{
+    background: #1b1b1b;
+}
+input[type='submit']{
+    border-radius: 25px;
+    border: solid 1px #fb2576;
+    background-color: #fb2576;
+    color: #151515;
+    padding: 7px;
+    font-size: 18px;
+}
+input[type='submit']:hover{
+    background-color: rgba(251, 37, 118, 0.7);
+}
+input[type='submit']:active{
+    background-color: rgba(251, 37, 118, 0.45);
+}
+input[type='text']:focus, input[type='password']:focus{
+    outline: 0;
+    background-color: #a41e4f;
+    transition-duration: 500ms;
+}
+input[type='text']:hover, input[type='password']:hover{
+    outline: 0;
+    border: solid 1px #07bdff;
+    transition-duration: 500ms;
+}
+.error-msg {
+    display: inline-block;
+    color: red;
+    background-color: #6b0000;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.login-label{
+    display: inline;
+    font-size: large;
+    margin-top: 10px;
+}

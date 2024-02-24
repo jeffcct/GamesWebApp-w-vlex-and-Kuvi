@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}{{ type }}{% endblock %}
+
+{% block content %}
+
+
+<main id="main">
+<h1>{{ form.submit.label }}</h1>
+<div class="form">
+    <form method="POST" action={{ handler_url }}>
+        {{ form.csrf_token }}
+    <div class="login-label">
+        {{ form.user_name.label }}
+    </div>
+    <br>
+    {{ form.user_name() }}
+        {% if form.user_name.errors %}
+        <ul class="errors">
+            {% for error in form.user_name.errors %}
+                <li class="error-msg">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+    <br>
+    <div class="login-label">
+        {{ form.password.label }}
+    </div>
+
+    <br>
+    {{ form.password() }}
+    {% if form.password.errors %}
+        <ul class="errors">
+            {% for error in form.password.errors %}
+                <li class="error-msg">{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    <br>
+
+        {% if error_msg != None %}
+            <div class="error-msg">
+            {{ error_msg }}
+            </div>
+        {% endif %}
+
+
+    <br>
+    {{ form.submit }}
+    </form>
+</div>
+
+</main>
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{%extends 'layout.html'%}
+
+{% block title %}Favourites{% endblock %}
+
+<link rel="stylesheet" href="../static/css/wishlist.css">
+{%block content%}
+    <link rel="stylesheet" href="../static/css/wishlist.css">
+    <main id="main">
+        <h1>Favourites</h1>
+
+        {% for game in games %}
+        <!--<a href = "{{ url_for('game_bp.game_description', gameid = game.game_id) }}">-->
+            {% with game = game %}
+                {% include 'row_game_display.html' %}
+            {% endwith %}
+        <!--</a>-->
+        {% endfor %}
+    </main>
+
+{%endblock%}

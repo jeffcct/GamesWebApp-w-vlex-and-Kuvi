@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block title %} Settings {% endblock %}
+
+{% block content %}
+
+
+    <main id="main">
+        <h1>Profile Settings</h1>
+        <div class="form">
+            <form method="POST" action={{ handler_url }}>
+                {{ form.csrf_token }}
+                {{ form.description.label }}
+                <br>
+                <textarea id="description" name="description">{{ settings[3] }}</textarea>
+                
+                <br>
+                <br>
+                {{ form.show_comments.label }}
+                {{ form.show_comments(checked=settings[0]) }}
+                <br>
+                <br>
+                {{ form.show_favourites.label }}
+                {{ form.show_favourites(checked=settings[1]) }}
+                <br>
+                <br>
+                {{ form.show_wishlist.label }}
+                {{ form.show_wishlist(checked=settings[2]) }}
+                <br>
+                <br>
+                {{ form.submit() }}
+            </form>
+        </div>
+
+    </main>
+
+
+{% endblock %}

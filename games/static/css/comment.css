@@ -1,0 +1,33 @@
+.rating-img {
+    width: 15px;
+    color: white;
+}
+
+.card {
+    text-align: center;
+}
+
+textarea {
+    width: 40%;
+    height: 5rem;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#rating {
+    width: 41px;
+    height: 25px;
+    padding-left: 7px;
+}
+#rating-box{
+    display: block;
+}
+
+#rating, textarea {
+    background-color: #1b1b1b;
+    color: white;
+    border: black;
+}
+.username{
+    color: #fb2576;
+}

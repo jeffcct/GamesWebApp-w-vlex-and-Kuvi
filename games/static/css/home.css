@@ -1,0 +1,22 @@
+#main{
+    font-size: 14pt;
+    text-align: justify;
+}
+
+.home-text{
+    color: white;
+}
+
+.home-list{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.home-list-item{
+    padding-left: 15px;
+}
+
+.list-text{
+    font-weight: bolder;
+}

@@ -1,0 +1,27 @@
+{%extends 'layout.html'%}
+
+{% block title %}Browse games{% endblock %}
+
+{% block sidebar %}
+    {% with genres=genres %}
+    {% include 'sidebar.html' %}
+    {% endwith %}
+{% endblock %}
+
+{%block content%}
+    <main id="main">
+        {% for game in games %}
+        <a href = "{{ url_for('game_bp.game_description', gameid = game.game_id) }}">
+            {% with game = game %}
+                {% include 'card.html' %}
+            {% endwith %}
+        </a>
+        {% endfor %}
+        {% block pagination %}
+        <div class="pagination">
+            {% include 'pagination_buttons.html' %}
+        {% endblock %}
+        </div>
+    </main>
+
+{%endblock%}

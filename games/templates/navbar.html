@@ -1,0 +1,43 @@
+<nav id="navbar">
+    <div id="navbar-menu-wrapper">
+
+        <div class="logo">
+            <object data="../static/gamepad-solid-copy.svg" style="color:#fb2576"></object>
+        </div>
+        
+        <ul id="navbar-menu">
+            <li class="menu-item">
+                <a class="menu-text" href="{{url_for('home_bp.home')}}" >Home</a>
+                </li>
+            <li class="menu-item">
+                <a class="menu-text" href="{{url_for('browse_bp.browse_all_games')}}" >Browse</a>
+                </li>
+            {% if 'user_name' in session %}
+                <li class="menu-item">
+                    <a class="menu-text" href="{{url_for('wishlist_bp.wishlist')}}">Wishlist</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-text" href="{{url_for('favourites_bp.favourites')}}">Favourites</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-text" href="{{ url_for('profile_bp.profile', user_name = session['user_name']) }}">Profile</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-text" href="/logout">Logout</a>
+                </li>
+                
+
+            {% else %}
+                <li class="menu-item">
+                    <a class="menu-text" href="{{ url_for('auth_bp.login') }}">Login</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-text" href="{{ url_for('auth_bp.register') }}">Register</a>
+                </li>
+            {% endif %}
+        </ul>
+
+        {% include 'search.html' %}
+
+    </div>
+</nav>

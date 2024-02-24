@@ -1,0 +1,226 @@
+#main
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    width: 100%;
+    margin: 30px 5px 30px 5px;
+    background: #1b1b1b;
+    font-family: "Ubuntu", sans-serif;
+    color: white;
+    gap: 20px 0px;
+}
+
+#game-title
+{
+    color: white;
+}
+
+#game-summary-container
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#media-block
+{
+    width: 66%;
+    text-align: center;
+}
+
+#media-viewer
+{
+    display: block;
+    background-color: #292929;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 22px;
+    margin: auto;
+    text-align: center;
+    border-radius: 8px;
+}
+
+
+#media-viewer img
+{
+    width: 640px;
+    height: 360px;
+    object-fit: fill;
+    border-radius: 8px;
+    margin-right: 5px;
+}
+#media-viewer video
+{
+    width: 640px;
+    height: 360px;
+    object-fit: fill;
+    border-radius: 8px;
+    margin-right: 5px;
+}
+
+#summary-block
+{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background: #292929;
+    border-radius: 8px;
+    justify-content: flex-start;
+    gap: 5px 15px;
+    padding: 10px;
+}
+
+#header-img
+{
+    display: flex;
+    justify-content: center;
+}
+
+#header-img img
+{
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    border-radius: 8px;
+}
+
+#game-details-wrapper
+{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#game-details-list
+{
+    font-size: 14px;
+    background: #808080;
+    border-radius: 8px;
+}
+
+#game-details
+{
+    margin: 10px;
+}
+
+#buttons-container
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.buy-button
+{
+    align-self: flex-end;
+    width: 100%;
+    height: auto;
+    /*height: 40%;*/
+    background: #fb2576;
+    border: solid 1px #fb2576;
+    border-radius: 12px;
+    font-family: "Ubuntu", sans-serif;
+}
+.buy-button:hover{
+    background-color: rgba(251, 37, 118, 0.7);
+}
+.buy-button:active{
+    background-color: rgba(251, 37, 118, 0.45);
+}
+
+.button-label
+{
+    font-size: 20px;
+}
+
+#game-metadata-container
+{
+    display: flex;
+    flex-direction: row;
+    background: #292929;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    gap: 0px 25px;
+    border-radius: 8px;
+}
+
+#game-description-block
+{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: justify;
+    margin: 20px 10px 20px 10px;
+    gap: 20px 0px;
+}
+
+#game-metadata-block
+{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    margin: 20px 10px 20px 10px;
+    gap: 20px 0px;
+}
+
+#metadata-container
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    background: #808080;
+    border-radius: 8px;
+}
+
+#metadata
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+    margin: 10px 0px 10px 10px;
+    font-size: 13px;
+}
+
+#reviews-container
+{
+    display: flex;
+    flex-direction: column;
+    background: #292929;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    gap: 0px 25px;
+    border-radius: 8px;
+}
+
+#reviews-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin: 20px 10px 20px 10px;
+    gap: 20px 0px;
+}
+
+#reviews ul
+{
+    list-style-type: "\01F3C6";
+    margin-left: 20px
+}
+
+#reviews li
+{
+    padding-left: 10px;
+}
+

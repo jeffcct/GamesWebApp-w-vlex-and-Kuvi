@@ -1,0 +1,98 @@
+.rating-img {
+    width: 45px;
+    color: white;
+}
+
+.game-img {
+    width: 300px;
+    border-radius: 35px 7.5px 0 0;
+    position: relative;
+    margin: 0;
+}
+
+.card {
+    text-align: center;
+}
+
+.card:hover {
+    .card, .card * {
+        z-index: 100;
+    }
+
+    .overlay {
+        opacity: 1;
+    }
+
+    
+    .game-img, .card , .card-bottom, .rating, .card-body {
+        width: 350px;
+        -webkit-transition: width 0.1s ease-in-out;
+        -moz-transition: width 0.1s ease-in-out;
+        -o-transition: width 0.1s ease-in-out;
+        transition: width 0.1s ease-in-out;
+    }
+
+    .game-img, .card {
+        border-radius: 20px 50px 0 0;
+    }
+
+    .card-bottom {
+        background-color: black;
+        border-radius: 0 0 55px 400px;
+    }
+
+    .rating {
+        display: block;
+    }
+
+
+}
+
+.card-bottom {
+    background-color: black;
+    border-radius: 0 0 150px 15px;
+}
+
+#comment {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: auto;
+    width: 100%;
+    margin: 30px 5px 30px 5px;
+    background: #1b1b1b;   /*test val*/
+    font-family: "Ubuntu", sans-serif;
+    color: #E8C2CA;
+    gap: 20px 0px;
+/*
+    background: #1b1b1b;
+*/
+}
+
+.card-body {
+    background-color: #fb257680;
+    /*#afaba8 prev color*/
+}
+
+.card-body, .card-bottom, .rating {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin: 1px;
+    border: 0;
+    width: 300px;
+}
+
+.card-body {
+    min-height: 100px;
+}
+
+.rating {
+    background: #101010;
+    display: none;
+}
+
+a {
+    color: unset;
+}

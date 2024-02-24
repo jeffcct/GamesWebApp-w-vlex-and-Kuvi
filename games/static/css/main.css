@@ -1,0 +1,203 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+#page-container
+{
+    display: block;
+    min-width: 600px;
+    width: 100%;
+    background: #1b1b1b;
+}
+
+#navbar-container
+{
+    min-width: 100%;
+    height: 100px;
+    width: 100%;
+}
+
+#centre-container
+{
+    width: 100%;
+    height: auto;
+    min-height: 1080px;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+}
+
+#sidebar-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#main-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#main
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: auto;
+    width: 100%;
+    margin: 30px 5px 30px 5px;
+    background: #1b1b1b;
+    font-family: "Ubuntu", sans-serif;
+    color: white;
+    gap: 20px 0px;
+}
+
+#footer-container
+{
+    width: 100%;
+    height: 60px;
+    background: #151515;
+}
+
+
+/* NAVBAR SECTION */
+#navbar
+{
+    height: 100%;
+    width: 100%;
+    background: #151515;
+    align-items: center;
+    border-bottom: solid 1px #383838;
+}
+
+#navbar-menu-wrapper
+{
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#navbar-menu
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+}
+
+.logo
+{
+    align-items: center;
+    justify-content: center;
+}
+.logo object
+{
+    width: 80px;
+    height: 60px;
+
+}
+
+.menu-item
+{
+    padding: 5px 15px;
+    position: relative;
+    font-weight: bolder;
+}
+
+.menu-text
+{
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+    color: white;
+
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+
+.menu-text:after
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fb2576;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.menu-text:hover:after
+{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* SIDEBAR SECTION */
+#sidebar-wrapper
+{
+    width: auto;
+    height: auto;
+    margin-top: 50px;
+    margin-right: 15px;
+}
+
+#sidebar-wrapper h2{
+    color: white;
+    padding-bottom: 10px;
+}
+
+#sidebar-menu
+{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* FOOTER SECTION */
+#footer
+{
+    background: #151515;
+    border-top: solid 1px #383838;
+    color: #808080;
+}
+
+#footer-wrapper
+{
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text
+{
+    font-size: 12px;
+}

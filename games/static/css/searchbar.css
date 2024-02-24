@@ -1,0 +1,49 @@
+#form-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#search-box, #search-category{
+    border-radius: 25px;
+    border: solid 1px #fb2576;
+    font-size: 16px;
+    font-family: "Ubuntu", sans-serif;
+    margin-right: 10px;
+    transition-duration: 500ms;
+    background-color: #1b1b1b;
+    color: white;
+}
+#search-box {
+    width: 250px;
+}
+#search-category{
+    width: 8rem;
+}
+
+.submit-button{
+    border-radius: 100px;
+    border: solid 1px #fb2576;
+    font-size: 16px;
+    font-family: "Ubuntu", sans-serif;
+    background-color: #fb2576;
+}
+.submit-button:hover{
+    background-color: rgba(251, 37, 118, 0.7);
+}
+.submit-button:active{
+    background-color: rgba(251, 37, 118, 0.45);
+}
+
+.search-bar-text{
+    margin: 8px;
+}
+
+#search-box:focus{
+    background-color: #a41e4f;
+    transition-duration: 500ms;
+}
+
+input[type="search"]{
+    padding-left: 9px;
+  }

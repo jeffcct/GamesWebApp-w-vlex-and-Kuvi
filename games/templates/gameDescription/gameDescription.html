@@ -1,0 +1,209 @@
+<link rel="stylesheet" href="../static/css/comment.css">
+
+{%extends 'layout.html'%}
+
+{% block title %}{{game.title}}{% endblock %}
+
+{% block sidebar %}
+    <div></div>
+{% endblock %}
+
+{%block content%}
+    <main id="main">
+
+        <div id="game-title">
+            <h1>{{game.title}}</h1>
+        </div>
+
+        <div id="game-summary-container">
+            <div id="media-block">
+                <div id="media-viewer">
+                    <!-- placeholders -->
+                    {% if game.trailers != [] %}
+
+                    {% for trailer in game.trailers %}
+                        <video height="360" width="auto" controls autoplay muted>
+                            <source src={{ trailer.link }} type="video/mp4">
+                        Your browser doesn't support video
+                        </video>
+
+                    {% endfor %}
+                    {% endif %}
+                    {% for screenshot in game.screenshots %}
+                        <img src={{ screenshot.link }}>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div id="summary-block">
+                <div id="header-img">
+                    <img src="{{game.image_url}}">
+                </div>
+
+                <div id="game-details-wrapper">
+                    <div id="game-details-list">
+
+                        <table id="game-details">
+                            <tr>
+                                <td class="data-descriptors">Price: </td>
+                                <td>&emsp;${{ game.price }}</td>
+                            </tr>
+                            <tr>
+                                <td class="data-descriptors">Recommendations: </td>
+                                <td>&emsp;{{ game.recommendations }}</td>
+                            </tr>
+                            <tr>
+                                <td class="data-descriptors">Achievements: </td>
+                                <td>&emsp;{{ game.achievements }}</td>
+                            </tr>
+                            <tr>
+                                <td class="data-descriptors">Release Date: </td>
+                                <td>&emsp;{{game.release_date}}</td>
+                            </tr>
+                            <tr>
+                                <td class="data-descriptors">Publisher: </td>
+                                <td>&emsp;{{ game.publisher.publisher_name }}</td>
+                            </tr>
+                            <tr>
+                                <td class="data-descriptors">Developer: </td>
+                                <td>&emsp;{{ game.developer.developer_name }}</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+                <!--<div id="favourite_button">
+                    <form method="get" action="#"> &lt;!&ndash; change to post when implementing &ndash;&gt;
+                        <button name="fav_game" type="submit" id="buy-button" value="{{ game.game_id }}">Price: ${{game.price}} NZD</button>
+                    </form>
+                </div>-->
+                <div id="buttons-container">
+                    <form method="post" action="/add-to-wishlist">
+                        <button name="wishlist_game" type="submit" class="buy-button" value="{{ game.game_id }}"><span class="button-label">Wishlist</span></button>
+                    </form>
+                    <form method="post" action="/favourite">
+                        <button name="fav_game" type="submit" class="buy-button" value="{{ game.game_id }}"><span class="button-label">Add to Favourites</span></button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="game-metadata-container">
+            <div id="game-description-block">
+                <h3>About the Game</h3>
+                <div id="description-paragraph">
+                    <p>
+                        {{game.description}}
+                    </p>
+                </div>
+            </div>
+            <div id="game-metadata-block">
+                <h3>Game details</h3>
+                <div id="metadata-container">
+                    <div id="metadata">
+                        <!-- jinja on dd -->
+                        <dl>
+                            <dt>Average Rating: </dt>
+                            <dd>{{ game.average_rating }}</dd>
+                        </dl>
+                        <dl>
+                            <dt>Release date: </dt>
+                            <dd>{{game.release_date}}</dd>
+                        </dl>
+                        <dl>
+                            <dt>Publishers: </dt>
+                            <dd>{{ game.publisher.publisher_name }}</dd>
+                        </dl>
+                        <dl>
+                            <dt>Developers: </dt>
+                            <dd>{{ game.developer.developer_name }}</dd>
+                        </dl>
+                        <dl>
+                            <dt>Website: </dt>
+                            <dd>{{ game.website_url }}</dd>
+                        </dl>
+                        <dl>
+                            <dt>Genres: </dt>
+                            {% for genre in game.genres %}
+                            <dd>{{ genre.genre_name }}</dd>
+                            {% endfor %}
+                        </dl>
+                        <dl>
+                            <dt>Categories: </dt>
+                            {% for category in game.categories %}
+                                <dd>{{ category.category_name }}</dd>
+                            {% endfor %}
+                        </dl>
+                        <!-- could probably put an if condition if there are notes? -->
+                        <dl>
+                            <dt>Notes: </dt>
+                            <dd>{{ game.notes }}</dd>
+                        </dl>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- jinja condition if there are reviews? I don't know, I think the review area should still show up, but say something like no comments? -->
+        <div id="reviews-container">
+            <div id="reviews-wrapper">
+                <h3>Reviews</h3>
+                <div class="form">
+                    {% if 'user_name' in session %}
+                        <form method="POST" action="{{ url_for('game_bp.game_description', gameid=game.game_id) }}">
+                            {{ form.csfr_token }}
+                            {{ form.comment.label }}
+                            <br>
+                            <br>
+                            {{ form.comment() }}
+                            <br>
+                            <br>
+                            <div id="rating-box">
+                                {{ form.rating.label }}
+                                {{ form.rating() }}
+                            </div>
+                            <br>
+                            {% if err_msg != None %}
+                                <div class="error-msg">
+                                {{ err_msg }}
+                                </div>
+                            {% endif %}
+                            <br>
+                            <br>
+                            {{ form.submit }}
+                            <br>
+                            <br>
+                        </form>
+                    {% endif %}
+                    <div id="reviews">
+                        <ul>
+                            {% for review in game.reviews %}
+                            <li>
+                                <a class="username" href="{{ url_for('profile_bp.profile', user_name=review.user.username) }}">{{ review.user.username }}</a>
+                                <br>
+                                {% for i in range(review.rating) %}
+                                    <img class="rating-img" src="../static/images/star-filled.png">
+                                {% endfor %}
+                                {% for i in range(5 - review.rating) %}
+                                    <img class="rating-img" src="../static/images/star-unfilled.svg">
+                                {% endfor %}
+                                {% for line in review.comment.splitlines() %}
+                                    <p class="comment">{{ line }}</p><br>
+                                {% endfor %}
+                            </li>
+                            {%endfor%}
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+{%endblock%}
+
