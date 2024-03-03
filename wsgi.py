@@ -1,5 +1,5 @@
 """App entry point."""
-from games import create_app
+from games.flask_app import create_app
 
 app = create_app()
 
